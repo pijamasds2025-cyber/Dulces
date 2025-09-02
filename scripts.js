@@ -32,8 +32,9 @@ function mostrarProductos(lista) {
     const div = document.createElement('div');
     div.className = 'producto bg-white rounded shadow p-4 text-center';
     div.innerHTML = `
-      <img src="${p.colores[0]?.imagen || p.imagen_base || 'https://via.placeholder.com/200'}" alt="${p.nombre}" class="mx-auto mb-2 rounded w-40 h-40 object-cover">
-      <h3 class="font-bold mt-2">${p.nombre}</h3>
+      <img src="${p.colores[0]?.imagen || p.imagen_base || 'https://placehold.co/200x200?text=Sin+Imagen'}"
+     alt="${p.nombre}"
+     class="w-full h-48 object-cover mb-2 rounded">
       <p class="text-pink-600 font-semibold">$${p.precio}</p>
       <button onclick="agregarAlCarrito(${p.id})" class="mt-2 bg-pink-400 hover:bg-pink-500 text-white px-2 py-1 rounded">Añadir</button>
     `;
