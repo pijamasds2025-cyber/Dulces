@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dulces Sueños - Tienda Online</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="estilos.css">
+</head>
+<body class="bg-pastel">
+
+<header class="flex justify-between items-center p-4 bg-gradient-to-r from-rose-200 via-blue-200 to-purple-200">
+  <h1 class="text-2xl font-bold text-white">Dulces Sueños</h1>
+  <div>
+    <a href="https://www.instagram.com/dsuenos_pijamas" target="_blank" class="mx-1 text-white">Instagram</a>
+    <a href="https://www.tiktok.com/@dsuenos_pijamas" target="_blank" class="mx-1 text-white">TikTok</a>
+    <a href="https://www.facebook.com/share/1H7fWznebq/" target="_blank" class="mx-1 text-white">Facebook</a>
+    <button id="btn-carrito" class="ml-4 bg-white text-pink-400 px-2 py-1 rounded">Carrito (<span id="carrito-count">0</span>)</button>
+  </div>
+</header>
+
+<main class="p-6">
+  <section id="productos" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6"></section>
+
+  <section class="mt-8 bg-white p-4 rounded shadow">
+    <h2 class="text-xl font-bold mb-4">Carrito de Compras</h2>
+    <div id="carrito">No hay productos en el carrito.</div>
+    <button id="btn-pagar" class="bg-pink-400 hover:bg-pink-500 text-white px-4 py-2 rounded mt-2">Ir a Pagar</button>
+  </section>
+</main>
+
+<div id="modal-checkout" class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center hidden">
+  <div class="bg-white p-6 rounded max-w-lg w-full relative">
+    <button onclick="cerrarCheckout()" class="absolute top-2 right-2 text-xl font-bold">×</button>
+    <h2 class="text-xl font-bold mb-4">Datos para el pedido</h2>
+    <form id="form-checkout" class="space-y-2">
+      <input type="text" placeholder="Nombre completo" class="w-full border p-1 rounded" required>
+      <select class="w-full border p-1 rounded">
+        <option value="">Tipo de documento</option>
+        <option value="TI">Tarjeta de identidad</option>
+        <option value="CC">Cédula de ciudadanía</option>
+      </select>
+      <input type="text" placeholder="Número de identificación" class="w-full border p-1 rounded" required>
+      <input type="text" placeholder="Número de celular" class="w-full border p-1 rounded" required>
+      <input type="email" placeholder="Correo electrónico" class="w-full border p-1 rounded" required>
+      <select id="departamento" class="w-full border p-1 rounded"></select>
+      <select id="municipio" class="w-full border p-1 rounded"></select>
+      <button type="submit" class="bg-pink-400 hover:bg-pink-500 text-white px-4 py-2 rounded w-full">Confirmar Pedido</button>
+    </form>
+  </div>
+</div>
+
+<script src="departamentos-municipios.js"></script>
+<script src="scripts.js"></script>
+</body>
+</html>
